@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-// import { Link } from "@reach/router";
 import { Card } from '../../Components/Card';
 import { Loader } from '../../Components/Loader';
 import { createPost as createPostUtil, getAllPosts } from '../../Proxy/Posts';
@@ -37,7 +36,6 @@ export const Home = () => {
         }
         try {
             const feed = await createPostUtil(req);
-            console.log('feef == ', feed);
             setPosts(feed);
         } catch (e) {
             setError(e.message);
@@ -60,7 +58,6 @@ export const Home = () => {
                             <Card>
                                 <h2 className="post-title">
                                     {title}
-                                    {/* <Link to={`/posts/${post.id}`}>{title}</Link> */}
                                 </h2>
                                 <div className="post-content">{content}</div>
                                 <div className="post-author">By - {username}</div>

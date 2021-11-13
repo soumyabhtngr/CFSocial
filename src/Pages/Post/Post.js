@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { Link } from "@reach/router";
 import { getPostById } from './../../Proxy/Posts';
 import './Post.css';
 
@@ -17,10 +16,9 @@ export const Post = ({ id }) => {
 
     if (!Object.keys(post).length) return <div />;
 
-    // const { content, title, username } = JSON.parse(post.result);
-    return (
-        <div className="post-display">
+    //TODO: show post with comment and other features.
 
-        </div>
+    return (
+        <div className="post-display"></div>
     );
 };
