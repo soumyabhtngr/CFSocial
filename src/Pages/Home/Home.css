@@ -1,3 +1,7 @@
+.home-container {
+    height: 100wh;
+    padding-bottom: 24px;
+}
 .post-area {
     max-width: 40vw;
     margin: 0 auto;

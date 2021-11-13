@@ -43,7 +43,7 @@ export const Home = () => {
     }
 
     return (
-        <>
+        <div className="home-container">
             <div className="post-area">
                 <div className="title">Title: <input ref={titleRef} className="title-input" placeholder="Post title will be..." type="text" name="title" /></div>
                 <textarea ref={postRef} placeholder="Let your thoughts flow through..." />
@@ -52,20 +52,24 @@ export const Home = () => {
             </div>
             {isError ? (<p style={{ color: 'red' }}>Some error occured</p>) : (
                 isFeedLoading ? <div style={{ paddingTop: '24px' }}><Loader /></div> : posts.map((post) => {
-                    const { title, content, username } = JSON.parse(post.result);
-                    return (
-                        <div key={post.id}>
-                            <Card>
-                                <h2 className="post-title">
-                                    {title}
-                                </h2>
-                                <div className="post-content">{content}</div>
-                                <div className="post-author">By - {username}</div>
-                            </Card>
-                        </div>
-                    )
+                    try {
+                        const { title, content, username } = JSON.parse(post.result);
+                        return (
+                            <div key={post.id}>
+                                <Card>
+                                    <h2 className="post-title">
+                                        {title}
+                                    </h2>
+                                    <div className="post-content">{content}</div>
+                                    <div className="post-author">By - {username ? username : 'Unnamed Author'}</div>
+                                </Card>
+                            </div>
+                        )
+                    } catch (e) {
+                        return <div />
+                    }
                 })
             )}
-        </>
+        </div>
     );
 };
