@@ -1,0 +1,21 @@
+.navigation-container {
+    width: 22vw;
+    height: 100vh;
+    border-right: 2px solid #eee;
+    padding: 24px;
+}
+.navigation-container h3 {
+    display: inline;
+    margin-left: 12px;
+}
+.navigation-container img {
+    vertical-align: sub;
+}
+
+.navigation-container div {
+    margin-top: 24px;
+    cursor: pointer;
+}
+.navigation-container h3:hover {
+    color: #276CD0;
+}

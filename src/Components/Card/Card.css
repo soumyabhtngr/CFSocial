@@ -1,0 +1,8 @@
+.card {
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    max-width: 40vw;
+    border: 1px solid #eee;
+    margin-top: 24px;
+}
